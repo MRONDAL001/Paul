@@ -1,0 +1,48 @@
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.deps.json
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.json
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.dev.json
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csprojAssemblyReference.cache
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csproj.CoreCompileInputs.cache
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfoInputs.cache
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfo.cs
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Nestor Yasmani Valle\Documents\Digital Stategy\Smart Admin\V.2\DEVELOPER\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.deps.json
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.json
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.dev.json
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csprojAssemblyReference.cache
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csproj.CoreCompileInputs.cache
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfoInputs.cache
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfo.cs
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\Downloads\ASP.NET_Core2\ASP.NET_Core2\src\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\Documents\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.deps.json
+C:\Users\Adriano\Documents\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.json
+C:\Users\Adriano\Documents\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.dev.json
+C:\Users\Adriano\Documents\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\Documents\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\Documents\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csproj.CoreCompileInputs.cache
+C:\Users\Adriano\Documents\SmartAdmin.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Adriano\Documents\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfoInputs.cache
+C:\Users\Adriano\Documents\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfo.cs
+C:\Users\Adriano\Documents\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\Documents\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\Documents\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csprojAssemblyReference.cache
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.deps.json
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.json
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.dev.json
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csproj.CoreCompileInputs.cache
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfoInputs.cache
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfo.cs
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csprojAssemblyReference.cache

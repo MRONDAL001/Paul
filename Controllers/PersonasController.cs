@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SmartAdmin.Web.Data;
 using SmartAdmin.Web.Models.Sistema;
 
@@ -24,6 +26,31 @@ namespace SmartAdmin.Web.Controllers
         {
             return View(await bd.Persona.ToListAsync());
         }
+        public async Task<Persona> GetList()
+        {
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri("http://riesgostecnologicos.azurewebsites.net/");
+                var url = string.Format("{0}{1}", "api/Persona","/ListaPersonas");
+                var response = await client.GetAsync(url);
+                var result = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                   
+                }
+               
+                var list = JsonConvert.DeserializeObject<List<Persona>>(result);
+                return list;
+               
+            }
+            catch (Exception ex)
+            {
+               
+            }
+        }
+
+        
 
         public IActionResult Create()
         {

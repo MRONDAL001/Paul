@@ -30,6 +30,18 @@ namespace SmartAdmin.Web.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);           
 
+            modelBuilder.Entity<CategoriasRiesgo>(entity =>
+            {
+                entity.HasKey(e => e.IdCategoriasRiesgo);
+
+                entity.Property(e => e.Descripcion).HasColumnType("text");
+
+                entity.HasOne(d => d.IdRiesgoNavigation)
+                    .WithMany(p => p.CategoriasRiesgo)
+                    .HasForeignKey(d => d.IdRiesgo)
+                    .HasConstraintName("FK_CategoriasRiesgo_Riesgo");
+            });
+
             modelBuilder.Entity<Persona>(entity =>
             {
                 entity.HasKey(e => e.IdPersona);
@@ -57,6 +69,27 @@ namespace SmartAdmin.Web.Data
 
                 entity.Property(e => e.Descripcion).HasColumnType("text");
             });
+
+            modelBuilder.Entity<ProblemaRiesgo>(entity =>
+            {
+                entity.HasKey(e => e.IdProblemaRiesgo);
+
+                entity.Property(e => e.Descripcion).HasColumnType("text");
+
+                entity.HasOne(d => d.IdCategoriaRiesgoNavigation)
+                    .WithMany(p => p.ProblemaRiesgo)
+                    .HasForeignKey(d => d.IdCategoriaRiesgo)
+                    .HasConstraintName("FK_ProblemaRiesgo_CategoriasRiesgo");
+            });
+
+            modelBuilder.Entity<Riesgo>(entity =>
+            {
+                entity.HasKey(e => e.IdRiesgo);
+
+                entity.Property(e => e.Descripcion)
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+            });
         }
 
         /// <summary>
@@ -70,5 +103,17 @@ namespace SmartAdmin.Web.Data
         /// </summary>
         /// <param name="builder">The builder being used to construct the model for this application context.</param>
         public DbSet<SmartAdmin.Web.Models.Sistema.Problema> Problema { get; set; }
+
+        /// <summary>
+        ///     Configures the schema needed for the application identity framework.
+        /// </summary>
+        /// <param name="builder">The builder being used to construct the model for this application context.</param>
+        public DbSet<SmartAdmin.Web.Models.Sistema.Riesgo> Riesgo { get; set; }
+
+        /// <summary>
+        ///     Configures the schema needed for the application identity framework.
+        /// </summary>
+        /// <param name="builder">The builder being used to construct the model for this application context.</param>
+        public DbSet<SmartAdmin.Web.Models.Sistema.CategoriasRiesgo> CategoriasRiesgo { get; set; }
     }
 }

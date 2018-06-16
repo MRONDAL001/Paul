@@ -1,0 +1,12 @@
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Release\netcoreapp2.0\SmartAdmin.Web.deps.json
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Release\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.json
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Release\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.dev.json
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Release\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\source\repos\SmartAdmin.Web\bin\Release\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Release\netcoreapp2.0\SmartAdmin.Web.csprojAssemblyReference.cache
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Release\netcoreapp2.0\SmartAdmin.Web.csproj.CoreCompileInputs.cache
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Release\netcoreapp2.0\SmartAdmin.Web.AssemblyInfoInputs.cache
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Release\netcoreapp2.0\SmartAdmin.Web.AssemblyInfo.cs
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Release\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Release\netcoreapp2.0\SmartAdmin.Web.pdb
