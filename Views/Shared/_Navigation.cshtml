@@ -1,0 +1,54 @@
+@inject IOptions<SmartSettings> Settings
+<!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<aside id="left-panel">
+<!-- User info -->
+<div class="login-info">
+    <span>
+        <!-- User image size is adjusted inside CSS, it should stay as it -->
+        @*<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">*@
+        <a href="javascript:void(0);" id="show-shortcut">
+            <img src="~/img/avatars/sunny.png" alt="me" class="online" />
+            <span></span>
+            <i class="fa fa-angle-down"></i>
+        </a>
+    </span>
+</div>
+<!-- end user info -->
+
+<!-- NAVIGATION : This navigation is also responsive-->
+<nav>
+<!--
+NOTE: Notice the gaps after each icon usage <i></i>..
+Please note that these links work a bit different than
+traditional href="" links. See documentation for details.
+-->
+
+    <ul>
+        <li is-active-route asp-controller="Personas">
+            <a href="#" title="Mantenimiento">
+                <i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Mantenimiento</span>
+            </a>
+            <ul>
+                <li is-active-route asp-controller="Personas" asp-action="Index">
+                    <a asp-controller="Personas" asp-action="Index" title="Mantenimiento">
+                        <span class="menu-item-parent">Personas</span>
+                    </a>
+                </li>
+                <li is-active-route asp-controller="Problemas" asp-action="Index">
+                    <a asp-controller="Problemas" asp-action="Index" title="Mantenimiento">
+                        <span class="menu-item-parent">Problemas</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+
+    </ul>
+</nav>
+<a asp-controller="Intel" asp-action="Variations" asp-show-when="@Settings.Value.Environment.IsDemo()" class="btn btn-primary nav-demo-btn"><i class="fa fa-info-circle"></i> SmartAdmin Package (187 MB)</a>
+<span class="minifyme" data-action="minifyMenu">
+    <i class="fa fa-arrow-circle-left hit"></i>
+</span>
+</aside>
+<!-- END NAVIGATION -->
