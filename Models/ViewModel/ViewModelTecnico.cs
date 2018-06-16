@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SmartAdmin.Web.Models.Sistema
+namespace SmartAdmin.Web.Models.ViewModel
 {
-    public partial class Persona
+    public class ViewModelTecnico
     {
-        public Persona()
-        {
-            Tecnico = new HashSet<Tecnico>();
-        }     
-
-        
         [Key]
         public int IdPersona { get; set; }
         [Required(ErrorMessage = "Debe introducir Nombre")]
@@ -26,6 +22,7 @@ namespace SmartAdmin.Web.Models.Sistema
         [Required(ErrorMessage = "Debe introducir Dirección")]
         [Display(Name = "Dirección:")]
         public string Direccion { get; set; }
-        public ICollection<Tecnico> Tecnico { get; set; }
+        public int IdTecnico { get; set; }
+
     }
 }

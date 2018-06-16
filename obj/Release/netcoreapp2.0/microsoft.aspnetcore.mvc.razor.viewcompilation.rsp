@@ -40,6 +40,9 @@ C:\Users\Adriano\source\repos\SmartAdmin.Web
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Personas\Create.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Personas\Edit.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Personas\Index.cshtml
+--file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\ProblemaRiesgoes\Create.cshtml
+--file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\ProblemaRiesgoes\Edit.cshtml
+--file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\ProblemaRiesgoes\Index.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Problemas\Create.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Problemas\Edit.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Problemas\Index.cshtml

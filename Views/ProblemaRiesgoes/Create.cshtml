@@ -1,10 +1,40 @@
-﻿@model SmartAdmin.Web.Models.Sistema.CategoriasRiesgo
+﻿@model SmartAdmin.Web.Models.Sistema.ProblemaRiesgo
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
+@*<h2>Create</h2>
 
+    <h4>ProblemaRiesgo</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Descripcion" class="control-label"></label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdCategoriaRiesgo" class="control-label"></label>
+                    <select asp-for="IdCategoriaRiesgo" class ="form-control" asp-items="ViewBag.IdCategoriaRiesgo"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
 <div id="content">
 
     <!-- widget grid -->
@@ -19,7 +49,7 @@
 
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Categorias Riesgo</h2>
+                        <h2>Problema Riesgo</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -34,14 +64,13 @@
 
                         <div class="widget-body no-padding">
 
-                            <form asp-action="Edit" id="checkout-form" class="smart-form">
+                            <form asp-action="Create" id="checkout-form" class="smart-form">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                <input type="hidden" asp-for="IdCategoriasRiesgo" />
                                 <fieldset>
                                     <div class="row">
                                         <section class="col col-lg-6">
-                                            <label>@Html.DisplayNameFor(model => model.IdRiesgoNavigation.Descripcion)</label>
-                                            <select asp-for="IdRiesgo" asp- class="form-control" asp-items="ViewBag.IdRiesgo">
+                                            <label>@Html.DisplayNameFor(model => model.IdCategoriaRiesgoNavigation.Descripcion)</label>
+                                            <select asp-for="IdCategoriaRiesgo" asp- class="form-control" asp-items="ViewBag.IdCategoriaRiesgo">
                                                 <option value="0" selected="selected" disabled="">Seleccione</option>
                                             </select>
                                         </section>
@@ -56,7 +85,7 @@
                                     </div>
                                 </fieldset>
                                 <footer>
-                                    <input type="submit" value="Actualizar" class="btn btn-default" />
+                                    <input type="submit" value="Guardar" class="btn btn-primary" />
                                     <a asp-action="Index" class="btn btn-default">Cancelar</a>
                                 </footer>
                             </form>
@@ -78,5 +107,11 @@
 </div>
 <!-- END MAIN CONTENT -->
 @section Scripts {
-
+    <link rel="stylesheet" href="~/lib/select2/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="~/lib/select2/dist/css/select2.min.css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Init_Select2();
+        });
+    </script>
 }

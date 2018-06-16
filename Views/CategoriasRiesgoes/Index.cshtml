@@ -4,41 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-@*<h2>Index</h2>
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Descripcion)
-                    </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IdRiesgoNavigation)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descripcion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdRiesgoNavigation.Descripcion)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdCategoriasRiesgo">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdCategoriasRiesgo">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdCategoriasRiesgo">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@
 <!-- MAIN CONTENT -->
 <div id="content">
     <p>
@@ -87,30 +53,32 @@
                             <table id="datatable_tabletools" class="table table-striped table-bordered table-hover" style="width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            @Html.DisplayNameFor(model => model.Descripcion)
-                                        </th>
-                                        <th>
+                                        <th data-class="expand">
                                             @Html.DisplayNameFor(model => model.IdRiesgoNavigation.Descripcion)
                                         </th>
+                                        <th data-hide="phone">
+                                            @Html.DisplayNameFor(model => model.Descripcion)
+                                        </th>
+
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Descripcion)
-                                            </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.IdRiesgoNavigation.Descripcion)
-                                            </td>
-                                            <td>
-                                                @Html.ActionLink("Editar", "Edit", new { id = item.IdCategoriasRiesgo }) |
-                                                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdCategoriasRiesgo }, new { onclick = "return confirm('Desea eliminar la persona... ?');" })
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdRiesgoNavigation.Descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Descripcion)
+                                        </td>
+
+                                        <td>
+                                            @Html.ActionLink("Editar", "Edit", new { id = item.IdCategoriasRiesgo }) |
+                                            @Html.ActionLink("Eliminar", "Delete", new { id = item.IdCategoriasRiesgo }, new { onclick = "return confirm('Desea eliminar la persona... ?');" })
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                             </table>

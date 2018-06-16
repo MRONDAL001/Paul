@@ -1,8 +1,9 @@
-﻿@model IEnumerable<SmartAdmin.Web.Models.Sistema.Riesgo>
+﻿@model IEnumerable<SmartAdmin.Web.Models.Sistema.ProblemaRiesgo>
 
 @{
     ViewData["Title"] = "Index";
 }
+
 
 <!-- MAIN CONTENT -->
 <div id="content">
@@ -38,7 +39,7 @@
                     -->
                     <header id="table">
                         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                        <h2>Riesgos</h2>
+                        <h2>Problema Riesgos</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -53,6 +54,12 @@
                                 <thead>
                                     <tr>
                                         <th data-class="expand">
+                                            @Html.DisplayNameFor(model => model.IdCategoriaRiesgoNavigation.IdRiesgoNavigation.Descripcion)
+                                        </th>
+                                        <th data-hide="phone">
+                                            @Html.DisplayNameFor(model => model.IdCategoriaRiesgoNavigation.Descripcion)
+                                        </th>
+                                        <th data-hide="phone">
                                             @Html.DisplayNameFor(model => model.Descripcion)
                                         </th>
                                         <th>Opciones</th>
@@ -61,15 +68,22 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        <tr>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.Descripcion)
-                                            </td>
-                                            <td>
-                                                @Html.ActionLink("Editar", "Edit", new { id = item.IdRiesgo }) |
-                                                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdRiesgo }, new { onclick = "return confirm('Desea eliminar la persona... ?');" })
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdCategoriaRiesgoNavigation.IdRiesgoNavigation.Descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdCategoriaRiesgoNavigation.Descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Descripcion)
+                                        </td>
+
+                                        <td>
+                                            @Html.ActionLink("Editar", "Edit", new { id = item.IdProblemaRiesgo }) |
+                                            @Html.ActionLink("Eliminar", "Delete", new { id = item.IdProblemaRiesgo }, new { onclick = "return confirm('Desea eliminar la persona... ?');" })
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                             </table>

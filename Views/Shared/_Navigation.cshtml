@@ -26,28 +26,38 @@ traditional href="" links. See documentation for details.
 
     <ul>
         <li is-active-route asp-controller="Personas">
-            <a href="#" title="Mantenimiento">
-                <i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Mantenimiento</span>
+            <a href="#" title="Configuracion">
+                <i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Configuraci&oacute;n</span>
             </a>
             <ul>
                 <li is-active-route asp-controller="Personas" asp-action="Index">
-                    <a asp-controller="Personas" asp-action="Index" title="Mantenimiento">
+                    <a asp-controller="Personas" asp-action="Index" title="Configuracion">
                         <span class="menu-item-parent">Personas</span>
                     </a>
                 </li>
-                <li is-active-route asp-controller="Problemas" asp-action="Index">
-                    <a asp-controller="Problemas" asp-action="Index" title="Mantenimiento">
-                        <span class="menu-item-parent">Problemas</span>
+                <li is-active-route asp-controller="Tecnicoes" asp-action="Index">
+                    <a asp-controller="Tecnicoes" asp-action="Index" title="Configuracion">
+                        <span class="menu-item-parent">Tecnicos</span>
                     </a>
                 </li>
+                @*<li is-active-route asp-controller="Problemas" asp-action="Index">
+            <a asp-controller="Problemas" asp-action="Index" title="Mantenimiento">
+                <span class="menu-item-parent">Problemas</span>
+            </a>
+        </li>*@
                 <li is-active-route asp-controller="Riesgoes" asp-action="Index">
-                    <a asp-controller="Riesgoes" asp-action="Index" title="Mantenimiento">
+                    <a asp-controller="Riesgoes" asp-action="Index" title="Configuracion">
                         <span class="menu-item-parent">Riesgos</span>
                     </a>
                 </li>
                 <li is-active-route asp-controller="CategoriasRiesgoes" asp-action="Index">
-                    <a asp-controller="CategoriasRiesgoes" asp-action="Index" title="Mantenimiento">
+                    <a asp-controller="CategoriasRiesgoes" asp-action="Index" title="Configuracion">
                         <span class="menu-item-parent">Categorias Riesgos</span>
+                    </a>
+                </li>
+                <li is-active-route asp-controller="ProblemaRiesgoes" asp-action="Index">
+                    <a asp-controller="ProblemaRiesgoes" asp-action="Index" title="Configuracion">
+                        <span class="menu-item-parent">Problema Riesgos</span>
                     </a>
                 </li>
             </ul>

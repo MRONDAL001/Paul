@@ -1,4 +1,4 @@
-﻿@model SmartAdmin.Web.Models.Sistema.CategoriasRiesgo
+﻿@model SmartAdmin.Web.Models.Sistema.ProblemaRiesgo
 
 @{
     ViewData["Title"] = "Edit";
@@ -19,7 +19,7 @@
 
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Categorias Riesgo</h2>
+                        <h2>Problema Riesgo</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -36,12 +36,12 @@
 
                             <form asp-action="Edit" id="checkout-form" class="smart-form">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                <input type="hidden" asp-for="IdCategoriasRiesgo" />
+                                <input type="hidden" asp-for="IdProblemaRiesgo" />
                                 <fieldset>
                                     <div class="row">
                                         <section class="col col-lg-6">
-                                            <label>@Html.DisplayNameFor(model => model.IdRiesgoNavigation.Descripcion)</label>
-                                            <select asp-for="IdRiesgo" asp- class="form-control" asp-items="ViewBag.IdRiesgo">
+                                            <label>@Html.DisplayNameFor(model => model.IdCategoriaRiesgoNavigation.Descripcion)</label>
+                                            <select asp-for="IdCategoriaRiesgo" asp- class="form-control" asp-items="ViewBag.IdCategoriaRiesgo">
                                                 <option value="0" selected="selected" disabled="">Seleccione</option>
                                             </select>
                                         </section>

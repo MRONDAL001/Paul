@@ -1,9 +1,8 @@
-﻿@model IEnumerable<SmartAdmin.Web.Models.Sistema.Persona>
+﻿@model IEnumerable<SmartAdmin.Web.Models.ViewModel.ViewModelTecnico>
 
 @{
     ViewData["Title"] = "Index";
 }
-<!-- MAIN CONTENT -->
 <div id="content">
     <p>
         <a asp-action="Create">
@@ -37,7 +36,7 @@
                     -->
                     <header id="table">
                         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                        <h2>Persona</h2>
+                        <h2>Tecnicos</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -84,8 +83,8 @@
                                                 @Html.DisplayFor(modelItem => item.Direccion)
                                             </td>
                                             <td>
-                                                @Html.ActionLink("Editar", "Edit", new { id = item.IdPersona }) |
-                                                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdPersona }, new { onclick = "return confirm('Desea eliminar la persona... ?');" })
+                                                @Html.ActionLink("Editar", "Edit", new { id = item.IdTecnico }) |
+                                                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdTecnico }, new { onclick = "return confirm('Desea eliminar la persona... ?');" })
                                             </td>
                                         </tr>
                                     }
@@ -109,12 +108,12 @@
 
 @section Scripts {
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
     pageSetUp();
 
     var pagefunction = function () {
-        
+
         /* BASIC ;*/
         var responsiveHelper_dt_basic = undefined;
         var responsiveHelper_datatable_fixed_column = undefined;
@@ -195,5 +194,5 @@
         });
 
 
-</script>
+    </script>
 }

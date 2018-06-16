@@ -1,4 +1,4 @@
-#region Using
+﻿#region Using
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -90,6 +90,17 @@ namespace SmartAdmin.Web.Data
                     .HasMaxLength(250)
                     .IsUnicode(false);
             });
+
+            modelBuilder.Entity<Tecnico>(entity =>
+            {
+                entity.HasKey(e => e.IdTecnico);
+
+                entity.HasOne(d => d.IdPersonaNavigation)
+                    .WithMany(p => p.Tecnico)
+                    .HasForeignKey(d => d.IdPersona)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Tecnico_Persona");
+            });
         }
 
         /// <summary>
@@ -115,5 +126,17 @@ namespace SmartAdmin.Web.Data
         /// </summary>
         /// <param name="builder">The builder being used to construct the model for this application context.</param>
         public DbSet<SmartAdmin.Web.Models.Sistema.CategoriasRiesgo> CategoriasRiesgo { get; set; }
+
+        /// <summary>
+        ///     Configures the schema needed for the application identity framework.
+        /// </summary>
+        /// <param name="builder">The builder being used to construct the model for this application context.</param>
+        public DbSet<SmartAdmin.Web.Models.Sistema.ProblemaRiesgo> ProblemaRiesgo { get; set; }
+
+        /// <summary>
+        ///     Configures the schema needed for the application identity framework.
+        /// </summary>
+        /// <param name="builder">The builder being used to construct the model for this application context.</param>
+        public DbSet<SmartAdmin.Web.Models.Sistema.Tecnico> Tecnico { get; set; }
     }
 }
