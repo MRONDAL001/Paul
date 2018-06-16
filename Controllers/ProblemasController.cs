@@ -11,7 +11,6 @@ using SmartAdmin.Web.Models.Sistema;
 
 namespace SmartAdmin.Web.Controllers
 {
-    //autoriza
     [Authorize]
     public class ProblemasController : Controller
     {
