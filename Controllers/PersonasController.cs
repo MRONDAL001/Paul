@@ -26,32 +26,7 @@ namespace SmartAdmin.Web.Controllers
         {
             return View(await bd.Persona.ToListAsync());
         }
-        public async Task<Persona> GetList()
-        {
-            try
-            {
-                var client = new HttpClient();
-                client.BaseAddress = new Uri("http://riesgostecnologicos.azurewebsites.net/");
-                var url = string.Format("{0}{1}", "api/Persona","/ListaPersonas");
-                var response = await client.GetAsync(url);
-                var result = await response.Content.ReadAsStringAsync();
-                if (!response.IsSuccessStatusCode)
-                {
-                   
-                }
-               
-                var list = JsonConvert.DeserializeObject<List<Persona>>(result);
-                return list;
-               
-            }
-            catch (Exception ex)
-            {
-               
-            }
-        }
-
         
-
         public IActionResult Create()
         {
             return View();
