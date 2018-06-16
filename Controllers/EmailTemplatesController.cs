@@ -24,5 +24,7 @@ namespace SmartAdmin.Web.Controllers
 
         // GET: /emailtemplates/newsletter
         public IActionResult NewsLetter() => View();
+
+        ////
     }
 }
