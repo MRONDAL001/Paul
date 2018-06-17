@@ -47,23 +47,13 @@ namespace SmartAdmin.Web.Controllers
         {
             InicializarMensaje(mensaje);
             var lista = new List<ViewModelTecnico>();
-            var tecn = await bd.Tecnico.ToListAsync();
-            if (tecn.Count== 0)
+            var personas = await bd.Persona.ToListAsync();
+            foreach (var item in personas)
             {
-                lista = await bd.Persona.Select(x => new ViewModelTecnico
+                var tecnic = await bd.Tecnico.Where(y => y.IdPersona == item.IdPersona).FirstOrDefaultAsync();
+                if (tecnic==null)
                 {
-                    Nombre = x.Nombre,
-                    Apellido = x.Apellido,
-                    Cedula = x.Cedula,
-                    Direccion = x.Direccion,
-                    IdPersona = x.IdPersona
-                }).ToListAsync();
-            }
-            else
-            {
-                foreach (var item in tecn)
-                {
-                    var tecnic = await bd.Persona.Where(y => y.IdPersona != item.IdPersona).Select(x => new ViewModelTecnico
+                    var tecnic1 = await bd.Persona.Where(y => y.IdPersona == item.IdPersona).Select(x => new ViewModelTecnico
                     {
                         Nombre = x.Nombre,
                         Apellido = x.Apellido,
@@ -71,19 +61,21 @@ namespace SmartAdmin.Web.Controllers
                         Direccion = x.Direccion,
                         IdPersona = x.IdPersona
                     }).FirstOrDefaultAsync();
-                    if (tecnic != null)
+                    if (tecnic1 != null)
                     {
-                        lista.Add(tecnic);
+                        lista.Add(tecnic1);
                     }
+
                 }
-            }           
+                
+            }
             return View(lista);
         }
         public async Task<IActionResult> AsignarTecnico(int id)
         {
 
             try
-            {                
+            {
                 var tecnico = new Tecnico();
                 tecnico.Estado = 1;
                 tecnico.IdPersona = id;
@@ -100,7 +92,7 @@ namespace SmartAdmin.Web.Controllers
                 return RedirectToAction("Asignar", new { mensaje = ex });
             }
         }
-        
+
         // GET: Tecnicoes/Create
         public IActionResult Create()
         {
