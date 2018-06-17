@@ -20,10 +20,18 @@ namespace SmartAdmin.Web.Controllers
         {
             bd = context;
         }
-
-        // GET: Riesgoes
-        public async Task<IActionResult> Index()
+        private void InicializarMensaje(string mensaje)
         {
+            if (mensaje == null)
+            {
+                mensaje = "";
+            }
+            ViewData["Error"] = mensaje;
+        }
+        // GET: Riesgoes
+        public async Task<IActionResult> Index(string mensaje)
+        {
+            InicializarMensaje(mensaje);
             return View(await bd.Riesgo.ToListAsync());
         }
 
@@ -117,17 +125,20 @@ namespace SmartAdmin.Web.Controllers
             }
             return View(riesgo);
         }
-
-
-
-        // POST: Riesgoes/Delete/5
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var riesgo = await bd.Riesgo.SingleOrDefaultAsync(m => m.IdRiesgo == id);
-            bd.Riesgo.Remove(riesgo);
-            await bd.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                var riesgo = await bd.Riesgo.SingleOrDefaultAsync(m => m.IdRiesgo == id);
+                bd.Riesgo.Remove(riesgo);
+                await bd.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", new { mensaje = "Existe Relacion con categorias de riesgos " });
+                throw;
+            }
         }
 
         private bool RiesgoExists(Riesgo riesgo)

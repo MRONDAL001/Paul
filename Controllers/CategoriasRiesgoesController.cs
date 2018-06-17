@@ -18,10 +18,18 @@ namespace SmartAdmin.Web.Controllers
         {
             bd = context;
         }
-
-        // GET: CategoriasRiesgoes
-        public async Task<IActionResult> Index()
+        private void InicializarMensaje(string mensaje)
         {
+            if (mensaje == null)
+            {
+                mensaje = "";
+            }
+            ViewData["Error"] = mensaje;
+        }
+        // GET: CategoriasRiesgoes
+        public async Task<IActionResult> Index(string mensaje)
+        {
+            InicializarMensaje(mensaje);
             var applicationDbContext = bd.CategoriasRiesgo.Include(c => c.IdRiesgoNavigation);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -103,16 +111,20 @@ namespace SmartAdmin.Web.Controllers
             ViewData["IdRiesgo"] = new SelectList(bd.Riesgo, "IdRiesgo", "Descripcion", categoriasRiesgo.IdRiesgo);
             return View(categoriasRiesgo);
         }
-
-        // GET: CategoriasRiesgoes/Delete/5
-
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var categoriasRiesgo = await bd.CategoriasRiesgo.SingleOrDefaultAsync(m => m.IdCategoriasRiesgo == id);
-            bd.CategoriasRiesgo.Remove(categoriasRiesgo);
-            await bd.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                var categoriasRiesgo = await bd.CategoriasRiesgo.SingleOrDefaultAsync(m => m.IdCategoriasRiesgo == id);
+                bd.CategoriasRiesgo.Remove(categoriasRiesgo);
+                await bd.SaveChangesAsync();
+                InicializarMensaje(null);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", new { mensaje = "Existe Relacion con problemas de riesgos " });
+            }
         }
 
         private bool CategoriasRiesgoExists(CategoriasRiesgo categoriasRiesgo)

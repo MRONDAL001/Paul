@@ -22,8 +22,17 @@ namespace SmartAdmin.Web.Controllers
         {
             bd = context;
         }
-        public async Task<IActionResult> Index()
+        private void InicializarMensaje(string mensaje)
         {
+            if (mensaje == null)
+            {
+                mensaje = "";
+            }
+            ViewData["Error"] = mensaje;
+        }
+        public async Task<IActionResult> Index(string mensaje)
+        {
+            InicializarMensaje(mensaje);
             return View(await bd.Persona.ToListAsync());
         }
         
@@ -98,10 +107,17 @@ namespace SmartAdmin.Web.Controllers
         // GET: Personas/Delete/5        
         public async Task<IActionResult> Delete(int id)
         {
-            var persona = await bd.Persona.SingleOrDefaultAsync(m => m.IdPersona == id);
-            bd.Persona.Remove(persona);
-            await bd.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                var persona = await bd.Persona.SingleOrDefaultAsync(m => m.IdPersona == id);
+                bd.Persona.Remove(persona);
+                await bd.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", new { mensaje = "Persona asiganda como tecnico" });
+            }
         }
         private bool PersonaExists(Persona persona)
         {

@@ -19,10 +19,18 @@ namespace SmartAdmin.Web.Controllers
         {
             bd = context;
         }
-
-        // GET: Tecnicoes
-        public async Task<IActionResult> Index()
+        private void InicializarMensaje(string mensaje)
         {
+            if (mensaje == null)
+            {
+                mensaje = "";
+            }
+            ViewData["Error"] = mensaje;
+        }
+        // GET: Tecnicoes
+        public async Task<IActionResult> Index(string mensaje)
+        {
+            InicializarMensaje(mensaje);
             var tecni = await bd.Tecnico.Select(x => new ViewModelTecnico
             {
                 Nombre = x.IdPersonaNavigation.Nombre,
@@ -35,6 +43,64 @@ namespace SmartAdmin.Web.Controllers
             }).ToListAsync();
             return View(tecni);
         }
+        public async Task<IActionResult> Asignar(string mensaje)
+        {
+            InicializarMensaje(mensaje);
+            var lista = new List<ViewModelTecnico>();
+            var tecn = await bd.Tecnico.ToListAsync();
+            if (tecn.Count== 0)
+            {
+                lista = await bd.Persona.Select(x => new ViewModelTecnico
+                {
+                    Nombre = x.Nombre,
+                    Apellido = x.Apellido,
+                    Cedula = x.Cedula,
+                    Direccion = x.Direccion,
+                    IdPersona = x.IdPersona
+                }).ToListAsync();
+            }
+            else
+            {
+                foreach (var item in tecn)
+                {
+                    var tecnic = await bd.Persona.Where(y => y.IdPersona != item.IdPersona).Select(x => new ViewModelTecnico
+                    {
+                        Nombre = x.Nombre,
+                        Apellido = x.Apellido,
+                        Cedula = x.Cedula,
+                        Direccion = x.Direccion,
+                        IdPersona = x.IdPersona
+                    }).FirstOrDefaultAsync();
+                    if (tecnic != null)
+                    {
+                        lista.Add(tecnic);
+                    }
+                }
+            }           
+            return View(lista);
+        }
+        public async Task<IActionResult> AsignarTecnico(int id)
+        {
+
+            try
+            {                
+                var tecnico = new Tecnico();
+                tecnico.Estado = 1;
+                tecnico.IdPersona = id;
+                if (!TecnicoExists(tecnico))
+                {
+                    bd.Tecnico.Add(tecnico);
+                    await bd.SaveChangesAsync();
+                    return RedirectToAction(nameof(Asignar));
+                }
+                return RedirectToAction("Asignar", new { mensaje = "Ya esta asigando como tecnico" });
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Asignar", new { mensaje = ex });
+            }
+        }
+        
         // GET: Tecnicoes/Create
         public IActionResult Create()
         {
@@ -47,7 +113,7 @@ namespace SmartAdmin.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdTecnico,IdPersona,Estado")] Tecnico tecnico)
+        public async Task<IActionResult> Create(Tecnico tecnico)
         {
             if (ModelState.IsValid)
             {
@@ -113,8 +179,6 @@ namespace SmartAdmin.Web.Controllers
         }
 
         // GET: Tecnicoes/Delete/5
-
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             var tecnico = await bd.Tecnico.SingleOrDefaultAsync(m => m.IdTecnico == id);
@@ -125,7 +189,7 @@ namespace SmartAdmin.Web.Controllers
 
         private bool TecnicoExists(Tecnico tecnico)
         {
-            return bd.Tecnico.Any(e => e.IdTecnico == tecnico.IdPersona);
+            return bd.Tecnico.Any(e => e.IdPersona == tecnico.IdPersona);
         }
     }
 }

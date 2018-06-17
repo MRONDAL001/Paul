@@ -62,5 +62,9 @@ C:\Users\Adriano\source\repos\SmartAdmin.Web
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Shared\_Shortcuts.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Shared\_StylesheetsPartial.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Tecnicoes\Asignar.cshtml
+--file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Tecnicoes\Create.cshtml
+--file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Tecnicoes\Edit.cshtml
+--file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\Tecnicoes\Index.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\_ViewImports.cshtml
 --file=C:\Users\Adriano\source\repos\SmartAdmin.Web\Views\_ViewStart.cshtml

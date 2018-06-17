@@ -18,7 +18,14 @@ namespace SmartAdmin.Web.Controllers
         {
             db = context;
         }
-
+        private void InicializarMensaje(string mensaje)
+        {
+            if (mensaje == null)
+            {
+                mensaje = "";
+            }
+            ViewData["Error"] = mensaje;
+        }
         // GET: ProblemaRiesgoes
         public async Task<IActionResult> Index()
         {
@@ -56,7 +63,7 @@ namespace SmartAdmin.Web.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( ProblemaRiesgo problemaRiesgo)
+        public async Task<IActionResult> Create(ProblemaRiesgo problemaRiesgo)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +97,7 @@ namespace SmartAdmin.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,  ProblemaRiesgo problemaRiesgo)
+        public async Task<IActionResult> Edit(int id, ProblemaRiesgo problemaRiesgo)
         {
             if (id != problemaRiesgo.IdProblemaRiesgo)
             {
@@ -122,13 +129,20 @@ namespace SmartAdmin.Web.Controllers
         }
 
         // GET: ProblemaRiesgoes/Delete/5
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var problemaRiesgo = await db.ProblemaRiesgo.SingleOrDefaultAsync(m => m.IdProblemaRiesgo == id);
-            db.ProblemaRiesgo.Remove(problemaRiesgo);
-            await db.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                var problemaRiesgo = await db.ProblemaRiesgo.SingleOrDefaultAsync(m => m.IdProblemaRiesgo == id);
+                db.ProblemaRiesgo.Remove(problemaRiesgo);
+                await db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         private bool ProblemaRiesgoExists(int id)
