@@ -1,0 +1,112 @@
+﻿@model SmartAdmin.Web.Models.Sistema.Activos
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!-- MAIN CONTENT -->
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- START ROW -->
+        <div class="row">
+            <!-- NEW COL START -->
+            <article class="col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                        <h2>Persona</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+
+                        <div class="widget-body no-padding">
+
+                            <form asp-action="Edit" id="checkout-form" class="smart-form">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="IdActivos" />
+                                <fieldset>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label>@Html.DisplayNameFor(model => model.Nombre)</label>
+                                            <label class="input">
+                                                <i class="icon-prepend fa fa-user"></i>
+                                                <input maxlength="10" asp-for="Nombre" class="form-control" />
+                                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label>@Html.DisplayNameFor(model => model.Descripcion)</label>
+                                            <label class="input">
+                                                <i class="icon-prepend fa fa-user"></i>
+                                                <input type="text" asp-for="Descripcion" class="form-control" />
+                                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label>@Html.DisplayNameFor(model => model.IdTecnico)</label>
+                                            <select asp-for="IdTecnico" asp- class="form-control" asp-items="ViewBag.IdTecnico">
+                                                <option value="0" selected="selected" disabled="">Seleccione</option>
+                                            </select>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label>@Html.DisplayNameFor(model => model.IdTipo)</label>
+                                            <select asp-for="IdTipo" asp- class="form-control" asp-items="ViewBag.IdTipo">
+                                                <option value="0" selected="selected" disabled="">Seleccione</option>
+                                            </select>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label>@Html.DisplayNameFor(model => model.Ubicacion)</label>
+                                            <label class="input">
+                                                <i class="icon-prepend fa fa-user"></i>
+                                                <input maxlength="10" asp-for="Ubicacion" class="form-control" />
+                                                <span asp-validation-for="Ubicacion" class="text-danger"></span>
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label>@Html.DisplayNameFor(model => model.Critico)</label>
+                                            <input type="checkbox" asp-for="Critico" class="form-control" />
+                                            <span asp-validation-for="Critico" class="text-danger"></span>
+                                        </section>
+                                    </div>
+                                </fieldset>
+                                <footer>
+                                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                                    <a asp-action="Index" class="btn btn-default">Cancelar</a>
+                                </footer>
+                            </form>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+        </div>
+        <!-- END ROW -->
+    </section>
+    <!-- end widget grid -->
+    <!-- Modal -->
+
+</div>
+<!-- END MAIN CONTENT -->
+@section Scripts {
+
+}

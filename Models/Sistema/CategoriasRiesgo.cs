@@ -19,5 +19,7 @@ namespace SmartAdmin.Web.Models.Sistema
 
         public Riesgo IdRiesgoNavigation { get; set; }
         public ICollection<ProblemaRiesgo> ProblemaRiesgo { get; set; }
+
+
     }
 }

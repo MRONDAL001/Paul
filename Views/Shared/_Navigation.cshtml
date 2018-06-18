@@ -41,10 +41,10 @@ traditional href="" links. See documentation for details.
                     </a>
                 </li>
                 @*<li is-active-route asp-controller="Problemas" asp-action="Index">
-            <a asp-controller="Problemas" asp-action="Index" title="Mantenimiento">
-                <span class="menu-item-parent">Problemas</span>
-            </a>
-        </li>*@
+                    <a asp-controller="Problemas" asp-action="Index" title="Mantenimiento">
+                        <span class="menu-item-parent">Problemas</span>
+                    </a>
+                </li>*@
                 <li is-active-route asp-controller="Riesgoes" asp-action="Index">
                     <a asp-controller="Riesgoes" asp-action="Index" title="Configuracion">
                         <span class="menu-item-parent">Riesgos</span>
@@ -55,14 +55,27 @@ traditional href="" links. See documentation for details.
                         <span class="menu-item-parent">Categorias Riesgos</span>
                     </a>
                 </li>
-                <li is-active-route asp-controller="ProblemaRiesgoes" asp-action="Index">
-                    <a asp-controller="ProblemaRiesgoes" asp-action="Index" title="Configuracion">
-                        <span class="menu-item-parent">Problema Riesgos</span>
+                <li is-active-route asp-controller="Tipoes" asp-action="Index">
+                    <a asp-controller="Tipoes" asp-action="Index" title="Configuracion">
+                        <span class="menu-item-parent">Tipos</span>
                     </a>
                 </li>
             </ul>
         </li>
 
+        <li is-active-route asp-controller="Activos">
+            <a href="#" title="Configuracion">
+                <i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Cuantificacion y Valoracion</span>
+            </a>
+            <ul>
+                <li is-active-route asp-controller="Activos" asp-action="Index">
+                    <a asp-controller="Activos" asp-action="Index" title="Configuracion">
+                        <span class="menu-item-parent">Activos</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
 
     </ul>
 </nav>

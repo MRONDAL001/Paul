@@ -30,16 +30,46 @@ namespace SmartAdmin.Web.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);           
 
-            modelBuilder.Entity<CategoriasRiesgo>(entity =>
+            modelBuilder.Entity<Activos>(entity =>
             {
-                entity.HasKey(e => e.IdCategoriasRiesgo);
+                entity.HasKey(e => e.IdActivos);
 
                 entity.Property(e => e.Descripcion).HasColumnType("text");
 
-                entity.HasOne(d => d.IdRiesgoNavigation)
-                    .WithMany(p => p.CategoriasRiesgo)
-                    .HasForeignKey(d => d.IdRiesgo)
-                    .HasConstraintName("FK_CategoriasRiesgo_Riesgo");
+                entity.Property(e => e.Nombre).HasColumnType("text");
+
+                entity.Property(e => e.Ubicacion).HasColumnType("text");
+
+                entity.HasOne(d => d.IdTecnicoNavigation)
+                    .WithMany(p => p.Activos)
+                    .HasForeignKey(d => d.IdTecnico)
+                    .HasConstraintName("FK_Activos_Tecnico");
+
+                entity.HasOne(d => d.IdTipoNavigation)
+                    .WithMany(p => p.Activos)
+                    .HasForeignKey(d => d.IdTipo)
+                    .HasConstraintName("FK_Activos_Tipo");
+            });            
+
+            modelBuilder.Entity<Cualitativo>(entity =>
+            {
+                entity.HasKey(e => e.IdCualitativo);
+
+                entity.Property(e => e.Descripcion)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Impacto>(entity =>
+            {
+                entity.HasKey(e => e.IdImpacto);
+
+                entity.Property(e => e.Descripcion).HasColumnType("text");
+
+                entity.HasOne(d => d.IdCualitativoNavigation)
+                    .WithMany(p => p.Impacto)
+                    .HasForeignKey(d => d.IdCualitativo)
+                    .HasConstraintName("FK_Impacto_Cualitativo");
             });
 
             modelBuilder.Entity<Persona>(entity =>
@@ -61,6 +91,18 @@ namespace SmartAdmin.Web.Data
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(250)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Probabilidad>(entity =>
+            {
+                entity.HasKey(e => e.IdProbabilidad);
+
+                entity.Property(e => e.Descripcion).HasColumnType("text");
+
+                entity.HasOne(d => d.IdCualitativoNavigation)
+                    .WithMany(p => p.Probabilidad)
+                    .HasForeignKey(d => d.IdCualitativo)
+                    .HasConstraintName("FK_Probabilidad_Cualitativo");
             });
 
             modelBuilder.Entity<Problema>(entity =>
@@ -101,6 +143,13 @@ namespace SmartAdmin.Web.Data
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Tecnico_Persona");
             });
+
+            modelBuilder.Entity<Tipo>(entity =>
+            {
+                entity.HasKey(e => e.IdTipo);
+
+                entity.Property(e => e.Descripcion).HasColumnType("text");
+            });
         }
 
         /// <summary>
@@ -138,5 +187,17 @@ namespace SmartAdmin.Web.Data
         /// </summary>
         /// <param name="builder">The builder being used to construct the model for this application context.</param>
         public DbSet<SmartAdmin.Web.Models.Sistema.Tecnico> Tecnico { get; set; }
+
+        /// <summary>
+        ///     Configures the schema needed for the application identity framework.
+        /// </summary>
+        /// <param name="builder">The builder being used to construct the model for this application context.</param>
+        public DbSet<SmartAdmin.Web.Models.Sistema.Tipo> Tipo { get; set; }
+
+        /// <summary>
+        ///     Configures the schema needed for the application identity framework.
+        /// </summary>
+        /// <param name="builder">The builder being used to construct the model for this application context.</param>
+        public DbSet<SmartAdmin.Web.Models.Sistema.Activos> Activos { get; set; }
     }
 }
