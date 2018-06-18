@@ -46,3 +46,15 @@ C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.
 C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.dll
 C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
 C:\Users\Adriano\source\repos\SmartAdmin.Web\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csprojAssemblyReference.cache
+C:\Users\MRONDAL\Source\Repos\Paul\bin\Debug\netcoreapp2.0\SmartAdmin.Web.deps.json
+C:\Users\MRONDAL\Source\Repos\Paul\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.json
+C:\Users\MRONDAL\Source\Repos\Paul\bin\Debug\netcoreapp2.0\SmartAdmin.Web.runtimeconfig.dev.json
+C:\Users\MRONDAL\Source\Repos\Paul\bin\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\MRONDAL\Source\Repos\Paul\bin\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
+C:\Users\MRONDAL\Source\Repos\Paul\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csprojAssemblyReference.cache
+C:\Users\MRONDAL\Source\Repos\Paul\obj\Debug\netcoreapp2.0\SmartAdmin.Web.csproj.CoreCompileInputs.cache
+C:\Users\MRONDAL\Source\Repos\Paul\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\MRONDAL\Source\Repos\Paul\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfoInputs.cache
+C:\Users\MRONDAL\Source\Repos\Paul\obj\Debug\netcoreapp2.0\SmartAdmin.Web.AssemblyInfo.cs
+C:\Users\MRONDAL\Source\Repos\Paul\obj\Debug\netcoreapp2.0\SmartAdmin.Web.dll
+C:\Users\MRONDAL\Source\Repos\Paul\obj\Debug\netcoreapp2.0\SmartAdmin.Web.pdb
