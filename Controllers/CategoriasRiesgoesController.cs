@@ -123,7 +123,7 @@ namespace SmartAdmin.Web.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", new { mensaje = "No fue posible eliminar. Elimine primero del menu problemas riesgos" });
+                return RedirectToAction("Index", new { mensaje = "No fue posible eliminar. Elimine primero el problema en el menu problemas riesgos" });
             }
         }
 
