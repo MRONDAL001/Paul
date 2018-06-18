@@ -116,7 +116,7 @@ namespace SmartAdmin.Web.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", new { mensaje = "No es posible eliminar, persona se encuentra asiganda a un cargo" });
+                return RedirectToAction("Index", new { mensaje = "No fue posible eliminar, persona se encuentra asiganda como tecnico. Primero Elimine del menu tecnico" });
             }
         }
         private bool PersonaExists(Persona persona)
