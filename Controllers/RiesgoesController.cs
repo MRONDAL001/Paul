@@ -136,7 +136,7 @@ namespace SmartAdmin.Web.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", new { mensaje = "Existe Relacion con categorias de riesgos " });
+                return RedirectToAction("Index", new { mensaje = "No es posible eliminar. Elimine primero del menu categorias de riesgos " });
                 throw;
             }
         }
