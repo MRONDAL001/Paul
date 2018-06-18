@@ -123,7 +123,7 @@ namespace SmartAdmin.Web.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", new { mensaje = "Existe Relacion con problemas de riesgos " });
+                return RedirectToAction("Index", new { mensaje = "Elimine primero el problema, em el menu problema riesgos" });
             }
         }
 
