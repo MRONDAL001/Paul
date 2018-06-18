@@ -38,7 +38,7 @@ namespace SmartAdmin.Web.Controllers
         public IActionResult Create()
         {
             ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "IdTecnico", "IdTecnico");
-            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "IdTipo");
+            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "Descripcion");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace SmartAdmin.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "IdTecnico", "IdTecnico", activos.IdTecnico);
-            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "IdTipo", activos.IdTipo);
+            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "Descripcion", activos.IdTipo);
             return View(activos);
         }
 
@@ -74,7 +74,7 @@ namespace SmartAdmin.Web.Controllers
                 return NotFound();
             }
             ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "IdTecnico", "IdTecnico", activos.IdTecnico);
-            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "IdTipo", activos.IdTipo);
+            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "Descripcion", activos.IdTipo);
             return View(activos);
         }
 
@@ -111,7 +111,7 @@ namespace SmartAdmin.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IdTecnico"] = new SelectList(_context.Tecnico, "IdTecnico", "IdTecnico", activos.IdTecnico);
-            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "IdTipo", activos.IdTipo);
+            ViewData["IdTipo"] = new SelectList(_context.Tipo, "IdTipo", "Descripcion", activos.IdTipo);
             return View(activos);
         }
 

@@ -93,10 +93,10 @@
                                             @Html.DisplayNameFor(model => model.Critico)
                                         </th>
                                         <th data-class="expand">
-                                            @Html.DisplayNameFor(model => model.IdTecnicoNavigation)
+                                            @Html.DisplayNameFor(model => model.IdTecnicoNavigation.IdPersona)
                                         </th>
                                         <th data-class="expand">
-                                            @Html.DisplayNameFor(model => model.IdTipoNavigation)
+                                            @Html.DisplayNameFor(model => model.IdTipoNavigation.Descripcion)
                                         </th>
                                         <th>Opciones</th>
                                     </tr>
@@ -121,7 +121,7 @@
                                             @Html.DisplayFor(modelItem => item.IdTecnicoNavigation.IdTecnico)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.IdTipoNavigation.IdTipo)
+                                            @Html.DisplayFor(modelItem => item.IdTipoNavigation.Descripcion)
                                         </td>
                                         <td>
                                             @Html.ActionLink("Editar", "Edit", new { id = item.IdActivos }) |
